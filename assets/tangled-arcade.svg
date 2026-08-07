@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">Tangled dot's GitHub arcade</title>
+  <desc id="desc">A black, white, and muted red pixel-art night scene. Pac-Man chases a red ghost through an arcade maze beneath the words Hi, this is tangled dot and his GitHub.</desc>
+  <style>
+    .pixel { shape-rendering: crispEdges; }
+    .star { animation: blink 1.8s steps(1,end) infinite; }
+    .star.two { animation-delay: .55s; }
+    .star.three { animation-delay: 1.1s; }
+    .ghost { animation: drift 3.4s steps(12,end) infinite; }
+    .pac { animation: chase 3.4s linear infinite; }
+    .mouth { animation: chomp .18s steps(2,end) infinite; transform-origin: 0 0; }
+    .signal { animation: signal 1.2s steps(2,end) infinite; }
+    @keyframes blink { 0%, 42% { opacity:.14 } 43%, 100% { opacity:1 } }
+    @keyframes drift { 0%,100% { transform:translate(0,0) } 50% { transform:translate(0,-5px) } }
+    @keyframes chase { 0% { transform:translateX(0) } 100% { transform:translateX(550px) } }
+    @keyframes chomp { from { opacity:1 } to { opacity:.05 } }
+    @keyframes signal { 0%,49% { opacity:1 } 50%,100% { opacity:.18 } }
+  </style>
+  <rect width="900" height="420" fill="#080808"/>
+  <g class="pixel" fill="#f2f0e8">
+    <rect x="39" y="52" width="3" height="3" class="star"/><rect x="106" y="88" width="3" height="3" class="star two"/>
+    <rect x="211" y="43" width="3" height="3" class="star three"/><rect x="330" y="78" width="3" height="3" class="star"/>
+    <rect x="574" y="48" width="3" height="3" class="star two"/><rect x="700" y="77" width="3" height="3" class="star three"/>
+    <rect x="842" y="43" width="3" height="3" class="star"/>
+  </g>
+  <g fill="#f2f0e8" font-family="monospace" text-anchor="middle" shape-rendering="crispEdges">
+    <text x="450" y="123" font-size="30" font-weight="bold" letter-spacing="2">HI, THIS IS TANGLED DOT</text>
+    <text x="450" y="158" font-size="18" letter-spacing="7">AND HIS GITHUB</text>
+  </g>
+  <g class="pixel" fill="#d9d7cf">
+    <rect x="98" y="192" width="704" height="5"/><rect x="98" y="192" width="5" height="156"/><rect x="797" y="192" width="5" height="156"/>
+    <rect x="98" y="343" width="704" height="5"/>
+    <rect x="150" y="234" width="120" height="5"/><rect x="150" y="234" width="5" height="54"/><rect x="150" y="283" width="70" height="5"/>
+    <rect x="308" y="234" width="5" height="54"/><rect x="308" y="283" width="108" height="5"/>
+    <rect x="475" y="234" width="108" height="5"/><rect x="578" y="234" width="5" height="54"/>
+    <rect x="643" y="234" width="107" height="5"/><rect x="745" y="234" width="5" height="54"/>
+    <rect x="250" y="313" width="400" height="5"/>
+  </g>
+  <g fill="#d9d7cf" class="pixel">
+    <rect x="119" y="216" width="5" height="5"/><rect x="135" y="216" width="5" height="5"/><rect x="286" y="216" width="5" height="5"/><rect x="441" y="216" width="5" height="5"/><rect x="458" y="216" width="5" height="5"/><rect x="602" y="216" width="5" height="5"/><rect x="619" y="216" width="5" height="5"/><rect x="768" y="216" width="5" height="5"/>
+    <rect x="119" y="326" width="5" height="5"/><rect x="135" y="326" width="5" height="5"/><rect x="227" y="299" width="5" height="5"/><rect x="680" y="299" width="5" height="5"/><rect x="768" y="326" width="5" height="5"/>
+  </g>
+  <g class="ghost pixel" transform="translate(0 0)">
+    <path d="M680 259v-17c0-18 30-18 30 0v17l-5 6-5-6-5 6-5-6-5 6z" fill="#9f3636"/>
+    <rect x="687" y="243" width="5" height="6" fill="#080808"/><rect x="700" y="243" width="5" height="6" fill="#080808"/>
+  </g>
+  <g class="pac pixel">
+    <path d="M-12 264v-25h20l12 12-12 13z" fill="#f2f0e8"/>
+    <path class="mouth" d="M1 251h20L9 259z" fill="#080808"/>
+  </g>
+  <g font-family="monospace" fill="#9f3636" font-size="11" letter-spacing="2">
+    <text x="102" y="379">READY_</text><text x="718" y="379" class="signal">● LIVE</text>
+  </g>
+  <g class="pixel" fill="#f2f0e8" opacity=".55">
+    <rect x="78" y="398" width="744" height="1"/><rect x="78" y="407" width="510" height="1"/>
+  </g>
+</svg>
