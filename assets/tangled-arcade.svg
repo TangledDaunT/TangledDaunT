@@ -6,15 +6,38 @@
     .star { animation: blink 1.8s steps(1,end) infinite; }
     .star.two { animation-delay: .55s; }
     .star.three { animation-delay: 1.1s; }
-    .ghost { animation: drift 3.4s steps(12,end) infinite; }
-    .pac { animation: chase 3.4s linear infinite; }
-    .mouth { animation: chomp .18s steps(2,end) infinite; transform-origin: 0 0; }
-    .signal { animation: signal 1.2s steps(2,end) infinite; }
+    .ghost { animation: drift 3.4s steps(12,end) forwards; animation-delay: 0s; }
+    .pac { animation: chase 5s ease-in-out forwards; }
+    .mouth { animation: chomp .18s steps(2,end) forwards; transform-origin: 0 0; }
+    .signal { animation: signal 1.2s steps(2,end) forwards; }
+    .gameover { animation: showGameOver 0.5s ease-in forwards; animation-delay: 5s; opacity: 0; }
+
     @keyframes blink { 0%, 42% { opacity:.14 } 43%, 100% { opacity:1 } }
-    @keyframes drift { 0%,100% { transform:translate(0,0) } 50% { transform:translate(0,-5px) } }
-    @keyframes chase { 0% { transform:translateX(0) } 100% { transform:translateX(550px) } }
+    @keyframes drift {
+      0% { transform:translate(0,0); opacity:1; }
+      67% { transform:translate(0,0); opacity:1; }
+      70% { opacity:0; }
+      100% { opacity:0; }
+    }
+    @keyframes chase {
+      0%   { transform: translate(0, 0); }
+      15%  { transform: translate(180px, 0); }
+      30%  { transform: translate(180px, 60px); }
+      50%  { transform: translate(400px, 60px); }
+      65%  { transform: translate(400px, 0); }
+      80%  { transform: translate(560px, 0); }
+      95%  { transform: translate(560px, -5px); }
+      100% { transform: translate(560px, -5px); opacity: 0; }
+    }
     @keyframes chomp { from { opacity:1 } to { opacity:.05 } }
-    @keyframes signal { 0%,49% { opacity:1 } 50%,100% { opacity:.18 } }
+    @keyframes signal {
+      0%,49% { opacity:1 }
+      50%,100% { opacity:.18 }
+    }
+    @keyframes showGameOver {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
   </style>
   <rect width="900" height="420" fill="#080808"/>
   <g class="pixel" fill="#f2f0e8">
@@ -40,16 +63,20 @@
     <rect x="119" y="216" width="5" height="5"/><rect x="135" y="216" width="5" height="5"/><rect x="286" y="216" width="5" height="5"/><rect x="441" y="216" width="5" height="5"/><rect x="458" y="216" width="5" height="5"/><rect x="602" y="216" width="5" height="5"/><rect x="619" y="216" width="5" height="5"/><rect x="768" y="216" width="5" height="5"/>
     <rect x="119" y="326" width="5" height="5"/><rect x="135" y="326" width="5" height="5"/><rect x="227" y="299" width="5" height="5"/><rect x="680" y="299" width="5" height="5"/><rect x="768" y="326" width="5" height="5"/>
   </g>
-  <g class="ghost pixel" transform="translate(0 0)">
+  <g class="ghost pixel" transform="translate(560, -5)">
     <path d="M680 259v-17c0-18 30-18 30 0v17l-5 6-5-6-5 6-5-6-5 6z" fill="#9f3636"/>
     <rect x="687" y="243" width="5" height="6" fill="#080808"/><rect x="700" y="243" width="5" height="6" fill="#080808"/>
   </g>
-  <g class="pac pixel">
+  <g class="pac pixel" transform="translate(110, 210)">
     <path d="M-12 264v-25h20l12 12-12 13z" fill="#f2f0e8"/>
     <path class="mouth" d="M1 251h20L9 259z" fill="#080808"/>
   </g>
+  <g font-family="monospace" fill="#9f3636" font-size="18" font-weight="bold" text-anchor="middle">
+    <text x="450" y="370" class="gameover">GAME OVER</text>
+  </g>
   <g font-family="monospace" fill="#9f3636" font-size="11" letter-spacing="2">
-    <text x="102" y="379">READY_</text><text x="718" y="379" class="signal">● LIVE</text>
+    <text x="102" y="379" class="gameover" style="opacity:0">READY_</text>
+    <text x="718" y="379" class="signal" style="animation-fill-mode:forwards;">● LIVE</text>
   </g>
   <g class="pixel" fill="#f2f0e8" opacity=".55">
     <rect x="78" y="398" width="744" height="1"/><rect x="78" y="407" width="510" height="1"/>
