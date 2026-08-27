@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
-  <title id="title">Tangled dot's GitHub arcade</title>
-  <desc id="desc">A black, white, and muted red pixel-art night scene. Pac-Man chases a red ghost through an arcade maze beneath the words Hi, this is tangled dot and his GitHub.</desc>
+  <title id="title">TANGLEDDAUNT's GitHub arcade</title>
+  <desc id="desc">A black, white, and muted red pixel-art night scene. Pac-Man chases a red ghost through an arcade maze beneath the words Hi, this is TANGLEDDAUNT and his GitHub.</desc>
   <style>
     .pixel { shape-rendering: crispEdges; }
     .star { animation: blink 1.8s steps(1,end) infinite; }
@@ -24,7 +24,7 @@
     <rect x="842" y="43" width="3" height="3" class="star"/>
   </g>
   <g fill="#f2f0e8" font-family="monospace" text-anchor="middle" shape-rendering="crispEdges">
-    <text x="450" y="123" font-size="30" font-weight="bold" letter-spacing="2">HI, THIS IS TANGLED DOT</text>
+    <text x="450" y="123" font-size="30" font-weight="bold" letter-spacing="2">HI, THIS IS TANGLEDDAUNT</text>
     <text x="450" y="158" font-size="18" letter-spacing="7">AND HIS GITHUB</text>
   </g>
   <g class="pixel" fill="#d9d7cf">
